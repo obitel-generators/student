@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Student;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -15,7 +14,8 @@ class ApiController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::get();
+        return response($students, 200);
     }
 
     /**
